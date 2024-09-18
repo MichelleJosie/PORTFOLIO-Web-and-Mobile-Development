@@ -255,6 +255,18 @@ const Homepage = () => {
             logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
             alt: "Rocco Logo",
           },
+          {
+            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
+            alt: "Rocco Logo",
+          },
+          {
+            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
+            alt: "Rocco Logo",
+          },
+          {
+            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
+            alt: "Rocco Logo",
+          },
         ]}
       />
     </>
@@ -267,6 +279,18 @@ type BrandType = { logo: string; alt: string };
 const Slider = (props: any) => {
   const [position, setPosition] = createSignal(0);
   const [brandList, _] = createSignal<BrandType[]>(props.list);
+
+  createEffect(() => {
+    const cardcontainer = document.getElementById("BrandListDog");
+    const containerwidth = cardcontainer?.getBoundingClientRect().width || 0;
+    const elementwidth = containerwidth / brandList().length;
+    cardcontainer?.scrollTo({
+      left: elementwidth * position(),
+      behavior: "smooth",
+    });
+    console.log(position(), elementwidth);
+  });
+
   return (
     <>
       <div class="bg-background-primary w-screen py-16">
@@ -278,7 +302,9 @@ const Slider = (props: any) => {
             <div class="flex items-center">
               <button
                 disabled={position() == 0}
-                onClick={() => setPosition((prev: number) => prev - 1)}
+                onClick={() =>
+                  setPosition((prev: number) => (prev == 0 ? prev : prev - 1))
+                }
                 type="button"
                 class="rotate-180 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
@@ -301,11 +327,14 @@ const Slider = (props: any) => {
               </button>
             </div>
             <div class="grow">
-              <div class="gap-2 overflow-hidden grow flex flex-row w-full">
+              <div
+                id="BrandListDog"
+                class="snap-x snap-mandatory grow flex flex-row w-full overflow-auto sm:overflow-hidden"
+              >
                 <For each={brandList()}>
                   {(brand) => (
                     <>
-                      <div class="h-32 lg:h-48 rounded-lg overflow-hidden min-w-[33.333333%] md:min-w-[25%]">
+                      <div class="snap-start h-32 lg:h-48 rounded-lg min-w-[33.333333%] md:min-w-[25%]">
                         <img
                           class="object-cover h-full w-full"
                           src={brand.logo}
@@ -319,7 +348,11 @@ const Slider = (props: any) => {
             </div>
             <div class="flex items-center">
               <button
-                onClick={() => setPosition((prev: number) => prev + 1)}
+                onClick={() =>
+                  setPosition((prev: number) =>
+                    prev == brandList().length - 4 ? prev : prev + 1
+                  )
+                }
                 type="button"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
