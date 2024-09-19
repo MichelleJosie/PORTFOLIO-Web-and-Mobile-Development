@@ -40,9 +40,15 @@ const dogProductList: ProductCard[] = [
   },
 ];
 const Homepage = () => {
+  const [showAlert, setShowAlert] = createSignal(false);
+  const submitHandler = (event: SubmitEvent) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget as any);
+    setShowAlert(true);
+  };
   return (
     <>
-      <div class="container mx-auto">
+      <div class="container mx-auto px-8">
         <div
           id="default-carousel"
           class="relative w-full"
@@ -185,56 +191,10 @@ const Homepage = () => {
             </button>
           )}
         </For>
-        <h2 class="capitalize py-8 text-4xl font-extrabold dark:text-white">
-          The Most Popular Picks for Your Dog
-        </h2>
-        <div class="grid grid-flow-col auto-cols-auto gap-5 px-4">
-          <For each={dogProductList}>
-            {(item) => (
-              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:drop-shadow-lg transition-all">
-                <a href="#">
-                  <img
-                    class="rounded-t-lg"
-                    src="https://media.zooplus.com/bilder/2/400/rocco_chings_4xoriginals_900g_1000x1000_2.jpg"
-                    alt=""
-                  />
-                </a>
-                <div class="p-5">
-                  <a href="#">
-                    <h5 class="mb-3 font-semibold tracking-tight text-gray-900 dark:text-white">
-                      {item.productName}
-                    </h5>
-                  </a>
-                  <p class="font-bold text-gray-700 dark:text-gray-400">
-                    {`£${item.price}`}
-                  </p>
-                  <Show when={item.pricePerKilo}>
-                    <p class="font-normal text-sm text-slate-500">
-                      {`£${item.pricePerKilo} / kg`}
-                    </p>
-                  </Show>
-                  <Show when={item.pricePerPiece}>
-                    <p class="font-normal text-sm text-slate-500">
-                      {`£${item.pricePerPiece} / per piece`}
-                    </p>
-                  </Show>
-                </div>
-              </div>
-            )}
-          </For>
-        </div>
-        <div class="text-center">
-          <h3 class="py-8 text-2xl font-semibold dark:text-white">
-            Looking for more top products? Click here and find your new
-            favorites!
-          </h3>
-          <button
-            type="button"
-            class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-          >
-            Discover more!
-          </button>
-        </div>
+        <ProductOverview
+          title="The Most Popular Picks for Your Dog"
+          list={dogProductList}
+        />
       </div>
       <Slider
         title="The Most Popular Brands for Your Dog"
@@ -269,10 +229,211 @@ const Homepage = () => {
           },
         ]}
       />
+      <div class="container mx-auto px-8">
+        <ProductOverview
+          title="The Most Popular Accessories for Your Dog"
+          list={dogProductList}
+        />
+      </div>
+      <div class="w-screen py-32 bg-background-primary">
+        <div class="container mx-auto px-8">
+          <h3 class="capitalize mb-4 text-4xl font-extrabold text-white">
+            Newsletter
+          </h3>
+          <p class="text-white mb-4">
+            Don't miss out on personalized offers, discounts and vouchers! Get
+            an extra 333 zooPoints when you sign up for the newsletter now.
+          </p>
+          <form
+            class="flex items-end mb-3 gap-2"
+            onSubmit={(e) => submitHandler(e)}
+          >
+            <div class="relative">
+              <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                <svg
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 16"
+                >
+                  <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                  <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                </svg>
+              </div>
+              <input
+                type="email"
+                name="newsletter"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="E-Mail address"
+              />
+            </div>
+            <button
+              type="submit"
+              class="text-black bg-accent hover:bg-light font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+            >
+              Sign me up!
+              <svg
+                class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="container mx-auto px-8">
+        <ProductOverview
+          title="The Most Popular Accessories for Your Dog"
+          list={dogProductList}
+        />
+        <h3 class="capitalize mb-4 text-4xl font-extrabold text-primary">
+          The Zooplus Magazine
+        </h3>
+        <p class="text-black text-lg mb-4">
+          Our pet magazine provides you with information on everything that is
+          important in life with a pet. Whether you have a cat, dog, bird, small
+          animal, horse or fish - we provide you with valuable tips on caring
+          for and keeping your pet.
+        </p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 lg:grid-rows-2 gap-4 md:px-6">
+          <For each={magazineList}>
+            {(item) => (
+              <a
+                href="#"
+                class="border border-card-border shadow hover:drop-shadow-lg transition-all h-full w-full flex flex-col items-center bg-white rounded-lg shadow md:flex-row hover:bg-gray-100"
+              >
+                <img
+                  class="object-cover w-full md:w-44 lg:w-48 xl:w-72 rounded-t-lg h-full md:rounded-none md:rounded-s-lg"
+                  src={item.image}
+                  alt={item.alt}
+                />
+                <div class="flex flex-col justify-between p-4 leading-normal">
+                  <p class="mb-2 font-normal text-sm text-text-muted ">
+                    <span class="bg-light text-black text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-lg me-2 mb-2">
+                      <svg
+                        class="w-2.5 h-2.5 me-1.5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm3.982 13.982a1 1 0 0 1-1.414 0l-3.274-3.274A1.012 1.012 0 0 1 9 10V6a1 1 0 0 1 2 0v3.586l2.982 2.982a1 1 0 0 1 0 1.414Z" />
+                      </svg>
+                      {item.readingTime}
+                    </span>
+                    <br />
+                    {item.author}
+                  </p>
+                  <h5
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-3"
+                    lang="en"
+                  >
+                    {item.title}
+                  </h5>
+                  <p class="mb-2 font-normal text-gray-700 dark:text-gray-400 hyphens-auto text-justify line-clamp-4">
+                    {item.description}
+                  </p>
+                </div>
+              </a>
+            )}
+          </For>
+        </div>
+      </div>
+
+      <Show when={showAlert()}>
+        <div
+          class="flex items-center p-4 mb-4 text-sm text-black rounded-lg bg-light"
+          role="alert"
+        >
+          <svg
+            class="w-5 h-5 text-primary rotate-45"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 18 20"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m9 17 8 2L9 1 1 19l8-2Zm0 0V9"
+            />
+          </svg>
+          <span class="sr-only">Info</span>
+          <div>
+            <span class="font-medium">Info alert!</span> Change a few things up
+            and try submitting again.
+          </div>
+        </div>
+      </Show>
     </>
   );
 };
 export default Homepage;
+
+const magazineList: ArticleType[] = [
+  {
+    title: "Allergies affecting dogs",
+    alt: "an image of a dog that scatches itself",
+    image:
+      "https://www.zooplus.co.uk/magazine/wp-content/uploads/2019/12/allergies-affecting-dogs-1024x683.jpg",
+    author: "zooplus",
+    description:
+      "If a dog regularly scratches itself, we initially think parasites are the cause. However, there are further reasons for itchiness, such as allergies. Even dogs are affected by allergies and the number of allergic illnesses is increasing.",
+    readingTime: "9 min",
+  },
+  {
+    title: "Pixiebob",
+    alt: "an Image of a walking cat with a short tail",
+    image:
+      "https://www.zooplus.co.uk/magazine/wp-content/uploads/2024/08/Pixiebob.jpg",
+    author: "Natalie Decker",
+    description:
+      "Short tail, spotted fur, tufts of hair in the ears: the Pixiebob looks like a little lynx. But its shortened tail often causes problems in everyday cat life, which is why this breed is considered to be the result of breeding for physical traits that can cause suffering.",
+    readingTime: "7 min",
+  },
+  {
+    title: "Hermelin Rabbits",
+    alt: "an Image of a rabbit outside",
+    image:
+      "https://www.zooplus.co.uk/magazine/wp-content/uploads/2024/08/Hermelin-Rabbits.jpg",
+    author: "Franziska G., Veterinarian",
+    description:
+      "The Hermelin rabbit is considered the archetype of the dwarf rabbit. Its good-natured character and rounded body shape make it one of the most popular rabbit breeds. Discover what it is like to live with these white dwarves and what to consider when keeping them in this guide",
+    readingTime: "7 min",
+  },
+  {
+    title: "Diamond Dove",
+    alt: "an Image of a bird sitting on a branch",
+    image:
+      "https://www.zooplus.co.uk/magazine/wp-content/uploads/2024/08/AdobeStock_300034398-768x512-1.jpeg",
+    author: "Natalie Decker",
+    description:
+      "Easily recognisable by their white-speckled wings and the orange ring around their eyes, the diamond dove is a noteworthy exotic petite pigeon hailing from Australia. Nowadays, bird enthusiasts and hobby breeders around the world delight over these sociable birds.",
+    readingTime: "7 min",
+  },
+];
+
+type ArticleType = {
+  image: string;
+  alt: string;
+  title: string;
+  description: string;
+  author: string;
+  readingTime: string;
+};
 
 type BrandType = { logo: string; alt: string };
 
@@ -294,22 +455,22 @@ const Slider = (props: any) => {
   return (
     <>
       <div class="bg-background-primary w-screen py-16">
-        <div class="container mx-auto">
+        <div class="container mx-auto px-8">
           <h3 class="capitalize pb-8 text-4xl font-extrabold text-white">
             {props.title}
           </h3>
           <div class="w-full flex flex-row">
-            <div class="flex items-center">
+            <div class="flex items-center pr-2">
               <button
                 disabled={position() == 0}
                 onClick={() =>
                   setPosition((prev: number) => (prev == 0 ? prev : prev - 1))
                 }
                 type="button"
-                class="rotate-180 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="border-4 border-accent bg-primary hover:bg-green-800 rounded-full p-2.5"
               >
                 <svg
-                  class="w-4 h-4"
+                  class="w-4 h-4 rotate-180 text-accent"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -346,7 +507,7 @@ const Slider = (props: any) => {
                 </For>
               </div>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center pl-2">
               <button
                 onClick={() =>
                   setPosition((prev: number) =>
@@ -354,10 +515,10 @@ const Slider = (props: any) => {
                   )
                 }
                 type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="border-4 border-accent bg-primary hover:bg-green-800 rounded-full p-2.5"
               >
                 <svg
-                  class="w-4 h-4"
+                  class="w-4 h-4 text-accent"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -376,6 +537,62 @@ const Slider = (props: any) => {
             </div>
           </div>
         </div>
+      </div>
+    </>
+  );
+};
+
+const ProductOverview = (props: any) => {
+  return (
+    <>
+      <h2 class="capitalize py-8 text-4xl font-extrabold dark:text-white">
+        {props.title}
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 lg:grid-cols-5 lg:grid-rows-1 gap-5 px-4">
+        <For each={props.list}>
+          {(item) => (
+            <div class="hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all">
+              <a href="#">
+                <img
+                  class="rounded-t-lg"
+                  src="https://media.zooplus.com/bilder/2/400/rocco_chings_4xoriginals_900g_1000x1000_2.jpg"
+                  alt=""
+                />
+              </a>
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-3 font-semibold tracking-tight text-gray-900 dark:text-white">
+                    {item.productName}
+                  </h5>
+                </a>
+                <p class="font-bold text-gray-700 dark:text-gray-400">
+                  {`£${item.price}`}
+                </p>
+                <Show when={item.pricePerKilo}>
+                  <p class="font-normal text-sm text-slate-500">
+                    {`£${item.pricePerKilo} / kg`}
+                  </p>
+                </Show>
+                <Show when={item.pricePerPiece}>
+                  <p class="font-normal text-sm text-slate-500">
+                    {`£${item.pricePerPiece} / per piece`}
+                  </p>
+                </Show>
+              </div>
+            </div>
+          )}
+        </For>
+      </div>
+      <div class="text-center">
+        <h3 class="py-8 text-2xl font-semibold dark:text-white">
+          Looking for more top products? Click here and find your new favorites!
+        </h3>
+        <button
+          type="button"
+          class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        >
+          Discover more!
+        </button>
       </div>
     </>
   );

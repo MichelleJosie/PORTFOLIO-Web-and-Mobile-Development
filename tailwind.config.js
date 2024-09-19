@@ -16,6 +16,7 @@ module.exports = {
       "text-muted": "#636363",
       "background-primary": "#154902",
       "card-border": "#9BC58B",
+      accent: "#FFD633",
     },
   },
   plugins: [
