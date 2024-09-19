@@ -1,4 +1,11 @@
-import { createEffect, createSignal, For, Show } from "solid-js";
+import {
+  Component,
+  createEffect,
+  createSignal,
+  For,
+  JSX,
+  Show,
+} from "solid-js";
 
 type ProductCard = {
   productId: string;
@@ -7,7 +14,7 @@ type ProductCard = {
   pricePerKilo?: number;
   pricePerPiece?: number;
 };
-const categoryList = ["Dog", "Cat", "Horse", "Small Animal", "Bird", "Fish"];
+const dogCategoryList = ["Dog", "Cat", "Horse", "Small Animal", "Bird", "Fish"];
 const dogProductList: ProductCard[] = [
   {
     productId: "001",
@@ -37,6 +44,36 @@ const dogProductList: ProductCard[] = [
     productName: "Lukullus natural food single can 1 x 400 g",
     price: 1.69,
     pricePerKilo: 4.23,
+  },
+];
+const dogBrandList: SliderItemType[] = [
+  {
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/3CJr9HOhx68CYQMWEkyoCm/88fcf851e0260bdb93bbf394dbe45a7f/logo_RoyalCanin_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Royal Canin Logo",
+  },
+  {
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/3hBjxpBe4osM42wIg4UOUs/4d06a9692348b2b9cf1710991f191478/logo_Pedigree_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Pedigree Logo",
+  },
+  {
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1ApsdLMSdKSoMUgCSEUG46/72b92fa1a78dadee0b8d519b25e3b67f/logo_Hills_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Hills Logo",
+  },
+  {
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Rocco Logo",
+  },
+  {
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Rocco Logo",
+  },
+  {
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Rocco Logo",
+  },
+  {
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Rocco Logo",
   },
 ];
 const Homepage = () => {
@@ -181,7 +218,7 @@ const Homepage = () => {
           Find Products for Your Pet
         </h2>
 
-        <For each={categoryList}>
+        <For each={dogCategoryList}>
           {(item) => (
             <button
               type="button"
@@ -197,37 +234,10 @@ const Homepage = () => {
         />
       </div>
       <Slider
+        id="DogBrandCarousel"
+        showCards={4}
         title="The Most Popular Brands for Your Dog"
-        list={[
-          {
-            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/3CJr9HOhx68CYQMWEkyoCm/88fcf851e0260bdb93bbf394dbe45a7f/logo_RoyalCanin_1000x700.jpg?fm=webp&w=130&q=85",
-            alt: "Royal Canin Logo",
-          },
-          {
-            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/3hBjxpBe4osM42wIg4UOUs/4d06a9692348b2b9cf1710991f191478/logo_Pedigree_1000x700.jpg?fm=webp&w=130&q=85",
-            alt: "Pedigree Logo",
-          },
-          {
-            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1ApsdLMSdKSoMUgCSEUG46/72b92fa1a78dadee0b8d519b25e3b67f/logo_Hills_1000x700.jpg?fm=webp&w=130&q=85",
-            alt: "Hills Logo",
-          },
-          {
-            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-            alt: "Rocco Logo",
-          },
-          {
-            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-            alt: "Rocco Logo",
-          },
-          {
-            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-            alt: "Rocco Logo",
-          },
-          {
-            logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-            alt: "Rocco Logo",
-          },
-        ]}
+        list={dogBrandList}
       />
       <div class="container mx-auto px-8">
         <ProductOverview
@@ -292,7 +302,7 @@ const Homepage = () => {
           </form>
         </div>
       </div>
-      <div class="container mx-auto px-8">
+      <div class="container mx-auto px-8 py-12">
         <ProductOverview
           title="The Most Popular Accessories for Your Dog"
           list={dogProductList}
@@ -350,6 +360,12 @@ const Homepage = () => {
           </For>
         </div>
       </div>
+      <Slider
+        id="DealCarousel"
+        showCards={2}
+        title="The best Deals for You!"
+        list={dogBrandList}
+      />
 
       <Show when={showAlert()}>
         <div
@@ -435,16 +451,24 @@ type ArticleType = {
   readingTime: string;
 };
 
-type BrandType = { logo: string; alt: string };
+type SliderItemType = { logo: string; alt: string };
+type SliderProps<P = {}> = P & {
+  children?: JSX.Element;
+  list: SliderItemType[];
+  title: string;
+  showCards: number;
+  id: string;
+};
+type SliderComponent<P = {}> = Component<SliderProps<P>>;
 
-const Slider = (props: any) => {
+const Slider: SliderComponent = (props: SliderProps) => {
   const [position, setPosition] = createSignal(0);
-  const [brandList, _] = createSignal<BrandType[]>(props.list);
+  const [list, _] = createSignal<SliderItemType[]>(props.list);
 
   createEffect(() => {
-    const cardcontainer = document.getElementById("BrandListDog");
+    const cardcontainer = document.getElementById(props.id);
     const containerwidth = cardcontainer?.getBoundingClientRect().width || 0;
-    const elementwidth = containerwidth / brandList().length;
+    const elementwidth = containerwidth / list().length;
     cardcontainer?.scrollTo({
       left: elementwidth * position(),
       behavior: "smooth",
@@ -460,7 +484,7 @@ const Slider = (props: any) => {
             {props.title}
           </h3>
           <div class="w-full flex flex-row">
-            <div class="flex items-center pr-2">
+            <div class="items-center pl-2 hidden sm:flex">
               <button
                 disabled={position() == 0}
                 onClick={() =>
@@ -489,17 +513,24 @@ const Slider = (props: any) => {
             </div>
             <div class="grow">
               <div
-                id="BrandListDog"
+                id={props.id}
                 class="snap-x snap-mandatory grow flex flex-row w-full overflow-auto sm:overflow-hidden"
               >
-                <For each={brandList()}>
-                  {(brand) => (
+                <For each={list()}>
+                  {(item) => (
                     <>
-                      <div class="snap-start h-32 lg:h-48 rounded-lg min-w-[33.333333%] md:min-w-[25%]">
+                      <div
+                        class="p-2 snap-start h-32 lg:h-48 rounded-lg"
+                        classList={{
+                          "min-w-slider-2": props.showCards == 2,
+                          "min-w-slider-3": props.showCards == 3,
+                          "min-w-slider-4": props.showCards == 4,
+                        }}
+                      >
                         <img
-                          class="object-cover h-full w-full"
-                          src={brand.logo}
-                          alt={brand.alt}
+                          class="object-cover h-full w-full rounded-lg"
+                          src={item.logo}
+                          alt={item.alt}
                         />
                       </div>
                     </>
@@ -507,11 +538,11 @@ const Slider = (props: any) => {
                 </For>
               </div>
             </div>
-            <div class="flex items-center pl-2">
+            <div class="items-center pl-2 hidden sm:flex">
               <button
                 onClick={() =>
                   setPosition((prev: number) =>
-                    prev == brandList().length - 4 ? prev : prev + 1
+                    prev == list().length - 4 ? prev : prev + 1
                   )
                 }
                 type="button"
@@ -542,57 +573,69 @@ const Slider = (props: any) => {
   );
 };
 
-const ProductOverview = (props: any) => {
+type ProductOverviewProps<P = {}> = P & {
+  children?: JSX.Element;
+  title: string;
+  list: ProductCard[];
+};
+type ProductOverviewComponent<P = {}> = Component<ProductOverviewProps<P>>;
+
+const ProductOverview: ProductOverviewComponent = (
+  props: ProductOverviewProps
+) => {
   return (
     <>
-      <h2 class="capitalize py-8 text-4xl font-extrabold dark:text-white">
-        {props.title}
-      </h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 lg:grid-cols-5 lg:grid-rows-1 gap-5 px-4">
-        <For each={props.list}>
-          {(item) => (
-            <div class="hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all">
-              <a href="#">
-                <img
-                  class="rounded-t-lg"
-                  src="https://media.zooplus.com/bilder/2/400/rocco_chings_4xoriginals_900g_1000x1000_2.jpg"
-                  alt=""
-                />
-              </a>
-              <div class="p-5">
+      <div class="py-12">
+        <h2 class="capitalize pb-8 text-4xl font-extrabold dark:text-white">
+          {props.title}
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 lg:grid-cols-5 lg:grid-rows-1 gap-5 px-4">
+          <For each={props.list}>
+            {(item) => (
+              <div class="hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all">
                 <a href="#">
-                  <h5 class="mb-3 font-semibold tracking-tight text-gray-900 dark:text-white">
-                    {item.productName}
-                  </h5>
+                  <img
+                    class="rounded-t-lg"
+                    src="https://media.zooplus.com/bilder/2/400/rocco_chings_4xoriginals_900g_1000x1000_2.jpg"
+                    alt=""
+                  />
                 </a>
-                <p class="font-bold text-gray-700 dark:text-gray-400">
-                  {`£${item.price}`}
-                </p>
-                <Show when={item.pricePerKilo}>
-                  <p class="font-normal text-sm text-slate-500">
-                    {`£${item.pricePerKilo} / kg`}
+                <div class="p-5">
+                  <a href="#">
+                    <h5 class="mb-3 font-semibold tracking-tight text-gray-900 dark:text-white">
+                      {item.productName}
+                    </h5>
+                  </a>
+                  <p class="font-bold text-gray-700 dark:text-gray-400">
+                    {`£${item.price}`}
                   </p>
-                </Show>
-                <Show when={item.pricePerPiece}>
-                  <p class="font-normal text-sm text-slate-500">
-                    {`£${item.pricePerPiece} / per piece`}
-                  </p>
-                </Show>
+                  <Show when={item.pricePerKilo}>
+                    <p class="font-normal text-sm text-slate-500">
+                      {`£${item.pricePerKilo} / kg`}
+                    </p>
+                  </Show>
+                  <Show when={item.pricePerPiece}>
+                    <p class="font-normal text-sm text-slate-500">
+                      {`£${item.pricePerPiece} / per piece`}
+                    </p>
+                  </Show>
+                </div>
               </div>
-            </div>
-          )}
-        </For>
-      </div>
-      <div class="text-center">
-        <h3 class="py-8 text-2xl font-semibold dark:text-white">
-          Looking for more top products? Click here and find your new favorites!
-        </h3>
-        <button
-          type="button"
-          class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-        >
-          Discover more!
-        </button>
+            )}
+          </For>
+        </div>
+        <div class="text-center">
+          <h3 class="py-8 text-2xl font-semibold dark:text-white">
+            Looking for more top products? Click here and find your new
+            favorites!
+          </h3>
+          <button
+            type="button"
+            class="text-black bg-accent hover:bg-light focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+          >
+            Discover more!
+          </button>
+        </div>
       </div>
     </>
   );
