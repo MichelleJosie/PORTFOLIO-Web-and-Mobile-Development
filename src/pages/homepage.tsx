@@ -14,7 +14,15 @@ type ProductCard = {
   pricePerKilo?: number;
   pricePerPiece?: number;
 };
-const dogCategoryList = ["Dog", "Cat", "Horse", "Small Animal", "Bird", "Fish"];
+type CategoryType = "Dog" | "Cat" | "Horse" | "Small Animal" | "Bird" | "Fish";
+const CategoryList: CategoryType[] = [
+  "Dog",
+  "Cat",
+  "Horse",
+  "Small Animal",
+  "Bird",
+  "Fish",
+];
 const dogProductList: ProductCard[] = [
   {
     productId: "001",
@@ -76,13 +84,36 @@ const dogBrandList: SliderItemType[] = [
     alt: "Rocco Logo",
   },
 ];
+type ListItems = { title: string; list: ProductCard[] };
 const Homepage = () => {
   const [showAlert, setShowAlert] = createSignal(false);
+  const [popularPicksList, setPopularPicksList] = createSignal<ListItems>({
+    title: "The Most Popular Picks for Your Dog",
+    list: dogProductList,
+  });
+
   const submitHandler = (event: SubmitEvent) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget as any);
     setShowAlert(true);
   };
+
+  const changeList = (category: CategoryType) => {
+    switch (category) {
+      case "Dog":
+        setPopularPicksList({
+          title: "The Most Popular Picks for Your Dog",
+          list: dogProductList,
+        });
+
+        break;
+
+      default:
+        setPopularPicksList({ title: "", list: [] });
+        break;
+    }
+  };
+
   return (
     <>
       <div class="container mx-auto px-8">
@@ -218,9 +249,10 @@ const Homepage = () => {
           Find Products for Your Pet
         </h2>
 
-        <For each={dogCategoryList}>
+        <For each={CategoryList}>
           {(item) => (
             <button
+              onClick={() => changeList(item)}
               type="button"
               class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
@@ -229,8 +261,8 @@ const Homepage = () => {
           )}
         </For>
         <ProductOverview
-          title="The Most Popular Picks for Your Dog"
-          list={dogProductList}
+          title={popularPicksList().title}
+          list={popularPicksList().list}
         />
       </div>
       <Slider
