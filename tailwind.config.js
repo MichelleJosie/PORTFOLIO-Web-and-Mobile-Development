@@ -17,6 +17,7 @@ module.exports = {
       "background-primary": "#154902",
       "card-border": "#9BC58B",
       accent: "#FFD633",
+      gradient: "#237803",
     },
     extend: {
       minWidth: {
