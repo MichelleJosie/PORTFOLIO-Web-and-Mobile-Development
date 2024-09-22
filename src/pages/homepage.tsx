@@ -13,8 +13,17 @@ type ProductCard = {
   price: number;
   pricePerKilo?: number;
   pricePerPiece?: number;
+  pricePerLiter?: number;
+  productImage: string;
+  productImageAlt: string;
 };
-type CategoryType = "Dog" | "Cat" | "Horse" | "Small Animal" | "Bird" | "Fish";
+export type CategoryType =
+  | "Dog"
+  | "Cat"
+  | "Horse"
+  | "Small Animal"
+  | "Bird"
+  | "Fish";
 const CategoryList: CategoryType[] = [
   "Dog",
   "Cat",
@@ -23,35 +32,148 @@ const CategoryList: CategoryType[] = [
   "Bird",
   "Fish",
 ];
-const dogProductList: ProductCard[] = [
+export const dogProductList: ProductCard[] = [
   {
+    productImage:
+      "https://media.zooplus.com/bilder/0/400/pla_rocco_rolls_chicken_1000x1000_0.jpg",
+    productImageAlt: "Picture of Rocco Rolls Chew Sticks",
     productId: "001",
-    productName: "Lukullus natural food single can 1 x 400 g",
-    price: 1.69,
-    pricePerKilo: 4.23,
+    productName: "Rocco Rolls Chew Sticks",
+    price: 2.99,
+    pricePerKilo: 14.95,
   },
   {
+    productImage:
+      "https://media.zooplus.com/bilder/6/400/147296_pla_rocco_curls_chicken_200g_1000x1000_6.jpg",
+    productImageAlt: "Picture of Rocco Curls",
     productId: "002",
-    productName: "Lukullus natural food single can 1 x 400 g",
-    price: 1.69,
-    pricePerPiece: 0.18,
+    productName: "Rocco Curls",
+    price: 3.79,
+    pricePerKilo: 18.95,
   },
   {
+    productImage:
+      "https://media.zooplus.com/bilder/9/400/wow_thetasteof_canada_300g_1000x1000_9.jpg",
+    productImageAlt: "Picture of Wolf of Wilderness Dry Dog Food Trial Pack",
     productId: "003",
-    productName: "Lukullus natural food single can 1 x 400 g",
-    price: 1.69,
+    productName: "Wolf of Wilderness Dry Dog Food Trial Pack",
+    price: 1.99,
+    pricePerKilo: 4.98,
   },
   {
+    productImage:
+      "https://media.zooplus.com/bilder/6/400/28021_pla_megapack_rocc_classic_rindpur_400g_hs_01_6.jpg",
+    productImageAlt: "Picture of Rocco Classic 6 x 400g",
     productId: "004",
-    productName: "Lukullus natural food single can 1 x 400 g",
-    price: 1.69,
-    pricePerKilo: 4.23,
+    productName: "Rocco Classic 6 x 400g",
+    price: 7.49,
+    pricePerKilo: 3.12,
   },
   {
+    productImage:
+      "https://media.zooplus.com/bilder/4/400/wow_classic_blueriver_1kg_1000x1000_4.jpg",
+    productImageAlt:
+      'Picture of Wolf of Wilderness Adult "Blue River" - Salmon - grain-free',
     productId: "005",
-    productName: "Lukullus natural food single can 1 x 400 g",
-    price: 1.69,
-    pricePerKilo: 4.23,
+    productName: 'Wolf of Wilderness Adult "Blue River" - Salmon - grain-free',
+    price: 26.49,
+    pricePerKilo: 5.3,
+  },
+];
+export const catProductList: ProductCard[] = [
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/2/400/101377_pla_cosma_soup_mixbox_12x40g_2.jpg",
+    productImageAlt: "Picture of Cosma Soup Saver Pack 24 x 40g",
+    productId: "006",
+    productName: "Cosma Soup Saver Pack 24 x 40g",
+    price: 12.99,
+    pricePerKilo: 13.53,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/1/400/tigerino_premium_babypowder_12kg_1000x1000_1.jpg",
+    productImageAlt:
+      "Picture of Tigerino Premium Cat Litter - Baby Powder Scent",
+    productId: "007",
+    productName: "Tigerino Premium Cat Litter - Baby Powder Scent",
+    price: 11.49,
+    pricePerPiece: 0.96,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/3/400/wildfreedom_widecountry_front_2kg_1000x1000_3.jpg",
+    productImageAlt:
+      'Picture of Wild Freedom Adult "Wide Country" Poultry - Grain-free',
+    productId: "008",
+    productName: 'Wild Freedom Adult "Wide Country" Poultry - Grain-free',
+    price: 16.49,
+    pricePerKilo: 8.25,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/7/400/1_tigerino_crystal_lavender_5l_1000x1000_7.jpg",
+    productImageAlt: "Picture of Tigerino Crystals Cat Litter - Lavender Scent",
+    productId: "009",
+    productName: "Tigerino Crystals Cat Litter - Lavender Scent",
+    price: 33.99,
+    pricePerLiter: 1.13,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/0/400/102943_pla_cosma_asia_mix_6x100g_pouchbox_0.jpg",
+    productImageAlt: "Picture of Cosma Asia in Jelly Pouches 6 x 100g",
+    productId: "010",
+    productName: "Cosma Asia in Jelly Pouches 6 x 100g",
+    price: 7.49,
+    pricePerKilo: 12.48,
+  },
+];
+export const horseProductList: ProductCard[] = [
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/5/400/65090_pla_stephans_muehle_heucobs_staubfrei_25kg_5.jpg",
+    productImageAlt: "Picture of Stephans Mühle hay cobs - without soaking",
+    productId: "011",
+    productName: "Stephans Mühle hay cobs - without soaking",
+    price: 29.99,
+    pricePerKilo: 1.2,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/6/400/62198_PLA_Muehldorfer_Revital_Klinikum_preobiotic_6.jpg",
+    productImageAlt: "Picture of Stephans Mühle horse treat banana",
+    productId: "012",
+    productName: "Stephans Mühle horse treat banana",
+    price: 3.99,
+    pricePerPiece: 3.99,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/6/400/105935_pla_muehldorfer_karotten_chips_6.jpg",
+    productImageAlt: "Picture of Mühldorfer carrot chips",
+    productId: "013",
+    productName: "Mühldorfer carrot chips",
+    price: 21.99,
+    pricePerKilo: 6.28,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/2/400/61894_pla_muehldorfer_heucobs_medium_2.jpg",
+    productImageAlt: "Picture of Mühldorfer hay cobs medium",
+    productId: "014",
+    productName: "Mühldorfer hay cobs medium - 20kg",
+    price: 30.39,
+    pricePerKilo: 1.52,
+  },
+  {
+    productImage:
+      "https://media.zooplus.com/bilder/0/400/102943_pla_cosma_asia_mix_6x100g_pouchbox_0.jpg",
+    productImageAlt: "Picture of Mühldorfer's Equichamp structure",
+    productId: "015",
+    productName: "Mühldorfer's Equichamp structure - 20kg",
+    price: 34.99,
+    pricePerKilo: 1.75,
   },
 ];
 const dogBrandList: SliderItemType[] = [
@@ -87,6 +209,8 @@ const dogBrandList: SliderItemType[] = [
 type ListItems = { title: string; list: ProductCard[] };
 const Homepage = () => {
   const [showAlert, setShowAlert] = createSignal(false);
+  const [currentCategory, setCurrentCategory] =
+    createSignal<CategoryType>("Dog");
   const [popularPicksList, setPopularPicksList] = createSignal<ListItems>({
     title: "The Most Popular Picks for Your Dog",
     list: dogProductList,
@@ -107,6 +231,41 @@ const Homepage = () => {
         });
 
         break;
+      case "Cat":
+        setPopularPicksList({
+          title: "The Most Popular Picks for Your Cat",
+          list: catProductList,
+        });
+
+        break;
+      case "Horse":
+        setPopularPicksList({
+          title: "The Most Popular Picks for Your Horse",
+          list: horseProductList,
+        });
+
+        break;
+      case "Small Animal":
+        setPopularPicksList({
+          title: "The Most Popular Picks for Your Small Animal",
+          list: catProductList,
+        });
+
+        break;
+      case "Bird":
+        setPopularPicksList({
+          title: "The Most Popular Picks for Your Bird",
+          list: horseProductList,
+        });
+
+        break;
+      case "Fish":
+        setPopularPicksList({
+          title: "The Most Popular Picks for Your Fish",
+          list: dogProductList,
+        });
+
+        break;
 
       default:
         setPopularPicksList({ title: "", list: [] });
@@ -122,38 +281,38 @@ const Homepage = () => {
           class="relative w-full"
           data-carousel="slide"
         >
-          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96 lg:h-[33rem]">
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img
-                src="https://picsum.photos/1400/500"
+                src="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
             </div>
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img
-                src="https://picsum.photos/1400/500"
+                src="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
             </div>
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img
-                src="https://picsum.photos/1400/500"
+                src="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
             </div>
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img
-                src="https://picsum.photos/1400/500"
+                src="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
             </div>
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
               <img
-                src="https://picsum.photos/1400/500"
+                src="https://images.ctfassets.net/qp85kbzn8noe/1ZzEy6m1hLlKDIdDPvlYB4/69ed32174acc959eebfcf35e706431cc/2024_08_AnniversaryCampaign_OwnBrands_Accessories_Tiaki_ModernLiving_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="..."
               />
@@ -261,6 +420,7 @@ const Homepage = () => {
           )}
         </For>
         <ProductOverview
+          link={`/bestsellers/${currentCategory()}`}
           title={popularPicksList().title}
           list={popularPicksList().list}
         />
@@ -273,6 +433,7 @@ const Homepage = () => {
       />
       <div class="container mx-auto px-8">
         <ProductOverview
+          link="#"
           title="The Most Popular Accessories for Your Dog"
           list={dogProductList}
         />
@@ -336,6 +497,7 @@ const Homepage = () => {
       </div>
       <div class="container mx-auto px-8 py-12">
         <ProductOverview
+          link="#"
           title="The Most Popular Accessories for Your Dog"
           list={dogProductList}
         />
@@ -609,6 +771,7 @@ type ProductOverviewProps<P = {}> = P & {
   children?: JSX.Element;
   title: string;
   list: ProductCard[];
+  link: string;
 };
 type ProductOverviewComponent<P = {}> = Component<ProductOverviewProps<P>>;
 
@@ -623,37 +786,7 @@ const ProductOverview: ProductOverviewComponent = (
         </h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 lg:grid-cols-5 lg:grid-rows-1 gap-5 px-4">
           <For each={props.list}>
-            {(item) => (
-              <div class="hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all">
-                <a href="#">
-                  <img
-                    class="rounded-t-lg"
-                    src="https://media.zooplus.com/bilder/2/400/rocco_chings_4xoriginals_900g_1000x1000_2.jpg"
-                    alt=""
-                  />
-                </a>
-                <div class="p-5">
-                  <a href="#">
-                    <h5 class="mb-3 font-semibold tracking-tight text-gray-900 dark:text-white">
-                      {item.productName}
-                    </h5>
-                  </a>
-                  <p class="font-bold text-gray-700 dark:text-gray-400">
-                    {`£${item.price}`}
-                  </p>
-                  <Show when={item.pricePerKilo}>
-                    <p class="font-normal text-sm text-slate-500">
-                      {`£${item.pricePerKilo} / kg`}
-                    </p>
-                  </Show>
-                  <Show when={item.pricePerPiece}>
-                    <p class="font-normal text-sm text-slate-500">
-                      {`£${item.pricePerPiece} / per piece`}
-                    </p>
-                  </Show>
-                </div>
-              </div>
-            )}
+            {(item) => <ProductCardView item={item} />}
           </For>
         </div>
         <div class="text-center">
@@ -661,12 +794,62 @@ const ProductOverview: ProductOverviewComponent = (
             Looking for more top products? Click here and find your new
             favorites!
           </h3>
-          <button
+          <a
+            href={props.link}
             type="button"
             class="text-black bg-accent hover:bg-light focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
           >
             Discover more!
-          </button>
+          </a>
+        </div>
+      </div>
+    </>
+  );
+};
+export type ProductCardViewProps<P = {}> = P & {
+  children?: JSX.Element;
+  item: ProductCard;
+};
+export type ProductCardViewComponent<P = {}> = Component<
+  ProductCardViewProps<P>
+>;
+
+export const ProductCardView: ProductCardViewComponent = (props) => {
+  const item = props.item;
+  return (
+    <>
+      <div class="flex flex-col hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all">
+        <a href="#">
+          <img
+            class="rounded-t-lg"
+            src={item.productImage}
+            alt={item.productImageAlt}
+          />
+        </a>
+        <div class="p-5 grow flex flex-col">
+          <a class="grow" href="#">
+            <h5 class="mb-3 font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-3">
+              {item.productName}
+            </h5>
+          </a>
+          <p class="font-bold text-gray-700 dark:text-gray-400">
+            {`£${item.price}`}
+          </p>
+          <Show when={item.pricePerKilo}>
+            <p class="font-normal text-sm text-slate-500">
+              {`£${item.pricePerKilo} / kg`}
+            </p>
+          </Show>
+          <Show when={item.pricePerLiter}>
+            <p class="font-normal text-sm text-slate-500">
+              {`£${item.pricePerLiter} / l`}
+            </p>
+          </Show>
+          <Show when={item.pricePerPiece}>
+            <p class="font-normal text-sm text-slate-500">
+              {`£${item.pricePerPiece} / per piece`}
+            </p>
+          </Show>
         </div>
       </div>
     </>

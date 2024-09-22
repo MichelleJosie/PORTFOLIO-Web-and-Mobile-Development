@@ -13,10 +13,13 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 const Homepage = lazy(() => import("./pages/homepage"));
+const Bestsellers = lazy(() => import("./pages/bestsellers"));
+
 render(
   () => (
     <Router root={App}>
       <Route path="/" component={Homepage} />
+      <Route path="/bestsellers/:category" component={Bestsellers} />
     </Router>
   ),
   root!
