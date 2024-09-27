@@ -176,6 +176,21 @@ export const horseProductList: ProductCard[] = [
     pricePerKilo: 1.75,
   },
 ];
+const dogSaleList: SliderItemType[] = [
+  {
+    logo: "https://images.ctfassets.net/qp85kbzn8noe/1eSIcSvL1O9nWsDvGHcIrV/d4d31133757a4229441f148c800f31ab/2024_08_AnniversaryCampaign_LCB_Offer_Week1_2880x480_DE.jpg?fm=webp&w=1005&q=85",
+    alt: "Up to 30% birthday deal for top brands such as Jsera and RINTI.",
+  },
+  {
+    logo: "https://images.ctfassets.net/qp85kbzn8noe/6aqfzjVYXqIVyyLBHDITGH/908170356e666dbe00a010a2b606d072/2024_06_Briantos_Snack_ChewBones_1000x160_DE__2_.jpg?fm=webp&w=1005&q=85",
+    alt: "Try the New Briantos dog Products",
+  },
+  {
+    logo: "https://images.ctfassets.net/qp85kbzn8noe/1OHLJNAOgW2gStYposWTL0/7f340699ca25da7b68a6662b4e0f6366/2024_09_AppBanner_General_2880x480_UK.jpg?fm=webp&w=1005&q=85",
+    alt: "check out our App for handy features & exclusive deals",
+  },
+];
+
 const dogBrandList: SliderItemType[] = [
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/3CJr9HOhx68CYQMWEkyoCm/88fcf851e0260bdb93bbf394dbe45a7f/logo_RoyalCanin_1000x700.jpg?fm=webp&w=130&q=85",
@@ -194,19 +209,22 @@ const dogBrandList: SliderItemType[] = [
     alt: "Rocco Logo",
   },
   {
-    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Rocco Logo",
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/NHpHEAtJcago0EmYM2soG/699e6669937aa078faec42329d686acc/logo_Felix_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Felix Logo",
   },
   {
-    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Rocco Logo",
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/4nP2douo2Q0OE4co8qS2ws/d3f83efd1a4536f0a13d7d06f06fb05e/logo_Animonda_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "animonda Logo",
   },
   {
-    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Rocco Logo",
+    logo: "https://images.ctfassets.net/w4bhfqu0yxyq/53wmaxweu4sMsqs0eMu2cW/3686e98f0ed22f522f9621e6d0d64f30/logo_Cosma_1000x700.jpg?fm=webp&w=130&q=85",
+    alt: "Cosma Logo",
   },
 ];
-type ListItems = { title: string; list: ProductCard[] };
+type ListItems = {
+  title: string;
+  list: ProductCard[];
+};
 const Homepage = () => {
   const [showAlert, setShowAlert] = createSignal(false);
   const [currentCategory, setCurrentCategory] =
@@ -268,7 +286,10 @@ const Homepage = () => {
         break;
 
       default:
-        setPopularPicksList({ title: "", list: [] });
+        setPopularPicksList({
+          title: "",
+          list: [],
+        });
         break;
     }
   };
@@ -282,39 +303,59 @@ const Homepage = () => {
           data-carousel="slide"
         >
           <div class="relative h-56 overflow-hidden rounded-lg md:h-96 lg:h-[33rem]">
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class="hidden duration-700 ease-in-out"
+              data-carousel-item
+              id="Deal-1"
+            >
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                alt="30% off on Cat and Dog products"
               />
             </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class="hidden duration-700 ease-in-out"
+              data-carousel-item
+              id="Deal-2"
+            >
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                alt="15% off on products from selected brands"
               />
             </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class="hidden duration-700 ease-in-out"
+              data-carousel-item
+              id="Deal-3"
+            >
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                alt="15% off your first subscription order"
               />
             </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class="hidden duration-700 ease-in-out"
+              data-carousel-item
+              id="Deal-4"
+            >
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                alt="20% off on Hills best Dog and Cat Food"
               />
             </div>
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class="hidden duration-700 ease-in-out"
+              data-carousel-item
+              id="Deal-5"
+            >
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/1ZzEy6m1hLlKDIdDPvlYB4/69ed32174acc959eebfcf35e706431cc/2024_08_AnniversaryCampaign_OwnBrands_Accessories_Tiaki_ModernLiving_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="..."
+                alt="25% for TIAKI products"
               />
             </div>
           </div>
@@ -357,12 +398,12 @@ const Homepage = () => {
           </div>
           <button
             type="button"
-            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group"
             data-carousel-prev
           >
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
               <svg
-                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                class="w-4 h-4 text-white rtl:rotate-180"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -384,9 +425,9 @@ const Homepage = () => {
             class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next
           >
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
               <svg
-                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                class="w-4 h-4 text-white rtl:rotate-180"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -404,7 +445,7 @@ const Homepage = () => {
             </span>
           </button>
         </div>
-        <h2 class="capitalize py-8 text-4xl font-extrabold dark:text-white">
+        <h2 class="capitalize py-8 text-4xl font-extrabold">
           Find Products for Your Pet
         </h2>
 
@@ -413,7 +454,7 @@ const Homepage = () => {
             <button
               onClick={() => changeList(item)}
               type="button"
-              class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               {item}
             </button>
@@ -448,13 +489,13 @@ const Homepage = () => {
             an extra 333 zooPoints when you sign up for the newsletter now.
           </p>
           <form
-            class="flex items-end mb-3 gap-2"
+            class="flex mb-3 gap-2 flex-col md:flex-row md:items-end"
             onSubmit={(e) => submitHandler(e)}
           >
             <div class="relative">
               <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                 <svg
-                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  class="w-4 h-4 text-gray-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -467,7 +508,7 @@ const Homepage = () => {
               <input
                 type="email"
                 name="newsletter"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                 placeholder="E-Mail address"
               />
             </div>
@@ -498,18 +539,26 @@ const Homepage = () => {
       <div class="container mx-auto px-8 py-12">
         <ProductOverview
           link="#"
-          title="The Most Popular Accessories for Your Dog"
+          title="Your Last Viewed Products"
           list={dogProductList}
         />
-        <h3 class="capitalize mb-4 text-4xl font-extrabold text-primary">
+        <h3 class="capitalize mb-4 text-4xl font-extrabold text-black">
           The Zooplus Magazine
         </h3>
-        <p class="text-black text-lg mb-4">
+        <p class="text-black text-lg mb-8">
           Our pet magazine provides you with information on everything that is
           important in life with a pet. Whether you have a cat, dog, bird, small
           animal, horse or fish - we provide you with valuable tips on caring
           for and keeping your pet.
         </p>
+        <div class="text-center my-8">
+          <button
+            type="button"
+            class="text-black bg-accent hover:bg-light font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
+          >
+            Discover the Magazine!
+          </button>
+        </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 lg:grid-rows-2 gap-4 md:px-6">
           <For each={magazineList}>
             {(item) => (
@@ -540,12 +589,12 @@ const Homepage = () => {
                     {item.author}
                   </p>
                   <h5
-                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-3"
+                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
                     lang="en"
                   >
                     {item.title}
                   </h5>
-                  <p class="mb-2 font-normal text-gray-700 dark:text-gray-400 hyphens-auto text-justify line-clamp-4">
+                  <p class="mb-2 font-normal text-gray-700 hyphens-auto text-justify line-clamp-4">
                     {item.description}
                   </p>
                 </div>
@@ -556,38 +605,10 @@ const Homepage = () => {
       </div>
       <Slider
         id="DealCarousel"
-        showCards={2}
+        showCards={1}
         title="The best Deals for You!"
-        list={dogBrandList}
+        list={dogSaleList}
       />
-
-      <Show when={showAlert()}>
-        <div
-          class="flex items-center p-4 mb-4 text-sm text-black rounded-lg bg-light"
-          role="alert"
-        >
-          <svg
-            class="w-5 h-5 text-primary rotate-45"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 18 20"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m9 17 8 2L9 1 1 19l8-2Zm0 0V9"
-            />
-          </svg>
-          <span class="sr-only">Info</span>
-          <div>
-            <span class="font-medium">Info alert!</span> Change a few things up
-            and try submitting again.
-          </div>
-        </div>
-      </Show>
     </>
   );
 };
@@ -645,7 +666,10 @@ type ArticleType = {
   readingTime: string;
 };
 
-type SliderItemType = { logo: string; alt: string };
+type SliderItemType = {
+  logo: string;
+  alt: string;
+};
 type SliderProps<P = {}> = P & {
   children?: JSX.Element;
   list: SliderItemType[];
@@ -667,7 +691,6 @@ const Slider: SliderComponent = (props: SliderProps) => {
       left: elementwidth * position(),
       behavior: "smooth",
     });
-    console.log(position(), elementwidth);
   });
 
   return (
@@ -702,7 +725,7 @@ const Slider: SliderComponent = (props: SliderProps) => {
                     d="M1 5h12m0 0L9 1m4 4L9 9"
                   />
                 </svg>
-                <span class="sr-only">Icon description</span>
+                <span class="sr-only">previous Slide</span>
               </button>
             </div>
             <div class="grow">
@@ -713,9 +736,11 @@ const Slider: SliderComponent = (props: SliderProps) => {
                 <For each={list()}>
                   {(item) => (
                     <>
-                      <div
-                        class="p-2 snap-start h-32 lg:h-48 rounded-lg"
+                      <a
+                        href="#"
+                        class="p-1 md:p-2 snap-start rounded-lg"
                         classList={{
+                          "min-w-slider-1": props.showCards == 1,
                           "min-w-slider-2": props.showCards == 2,
                           "min-w-slider-3": props.showCards == 3,
                           "min-w-slider-4": props.showCards == 4,
@@ -726,7 +751,7 @@ const Slider: SliderComponent = (props: SliderProps) => {
                           src={item.logo}
                           alt={item.alt}
                         />
-                      </div>
+                      </a>
                     </>
                   )}
                 </For>
@@ -757,7 +782,7 @@ const Slider: SliderComponent = (props: SliderProps) => {
                     d="M1 5h12m0 0L9 1m4 4L9 9"
                   />
                 </svg>
-                <span class="sr-only">Icon description</span>
+                <span class="sr-only">Next Slide</span>
               </button>
             </div>
           </div>
@@ -781,23 +806,21 @@ const ProductOverview: ProductOverviewComponent = (
   return (
     <>
       <div class="py-12">
-        <h2 class="capitalize pb-8 text-4xl font-extrabold dark:text-white">
-          {props.title}
-        </h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 lg:grid-cols-5 lg:grid-rows-1 gap-5 px-4">
+        <h2 class="capitalize pb-8 text-4xl font-extrabold">{props.title}</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 sm:grid-rows-2 lg:grid-cols-5 lg:grid-rows-1 gap-2 md:gap-5 md:px-4">
           <For each={props.list}>
             {(item) => <ProductCardView item={item} />}
           </For>
         </div>
         <div class="text-center">
-          <h3 class="py-8 text-2xl font-semibold dark:text-white">
+          <h3 class="py-8 text-2xl font-semibold">
             Looking for more top products? Click here and find your new
             favorites!
           </h3>
           <a
             href={props.link}
             type="button"
-            class="text-black bg-accent hover:bg-light focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            class="text-black bg-accent hover:bg-light font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
             Discover more!
           </a>
@@ -818,23 +841,22 @@ export const ProductCardView: ProductCardViewComponent = (props) => {
   const item = props.item;
   return (
     <>
-      <div class="flex flex-col hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all">
-        <a href="#">
-          <img
-            class="rounded-t-lg"
-            src={item.productImage}
-            alt={item.productImageAlt}
-          />
-        </a>
+      <a
+        href="#"
+        class="flex flex-col hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all"
+      >
+        <img
+          class="rounded-t-lg"
+          src={item.productImage}
+          alt={item.productImageAlt}
+        />
         <div class="p-5 grow flex flex-col">
-          <a class="grow" href="#">
-            <h5 class="mb-3 font-semibold tracking-tight text-gray-900 dark:text-white line-clamp-3">
+          <div class="grow">
+            <h5 class="mb-3 font-semibold tracking-tight text-gray-900 line-clamp-3">
               {item.productName}
             </h5>
-          </a>
-          <p class="font-bold text-gray-700 dark:text-gray-400">
-            {`£${item.price}`}
-          </p>
+          </div>
+          <p class="font-bold text-gray-700">{`£${item.price}`}</p>
           <Show when={item.pricePerKilo}>
             <p class="font-normal text-sm text-slate-500">
               {`£${item.pricePerKilo} / kg`}
@@ -851,7 +873,7 @@ export const ProductCardView: ProductCardViewComponent = (props) => {
             </p>
           </Show>
         </div>
-      </div>
+      </a>
     </>
   );
 };

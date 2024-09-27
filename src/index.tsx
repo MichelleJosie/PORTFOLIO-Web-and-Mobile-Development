@@ -12,8 +12,8 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
     "Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?"
   );
 }
-const Homepage = lazy(() => import("./pages/homepage"));
-const Bestsellers = lazy(() => import("./pages/bestsellers"));
+import Homepage from "./pages/homepage";
+import Bestsellers from "./pages/bestsellers";
 
 render(
   () => (

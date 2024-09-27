@@ -21,6 +21,7 @@ module.exports = {
     },
     extend: {
       minWidth: {
+        "slider-1": "100%",
         "slider-2": "50%",
         "slider-3": "calc(100%/3)",
         "slider-4": "25%",
