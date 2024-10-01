@@ -4,6 +4,7 @@ import "flowbite";
 import { RouterProps } from "@solidjs/router";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { Dropdown } from "flowbite";
+import { MetaProvider } from "@solidjs/meta";
 
 const NavItemList: NavItem[] = [
   {
@@ -205,7 +206,7 @@ const App: Component = (props: RouterProps) => {
     dropdown.hide();
   };
   return (
-    <>
+    <MetaProvider>
       <nav class="bg-primary bg-gradient-to-r from-primary to-gradient sticky top-0 z-50">
         <div class="container 2xl:max-w-screen-2xl flex flex-wrap flex-row items-center md:justify-start mx-auto p-4 justify-between">
           <div class="flex flex-col md:flex-row flex-start w-full items-center">
@@ -590,7 +591,7 @@ const App: Component = (props: RouterProps) => {
         </div>
       </nav>
 
-      {props.children}
+      {props.children as any}
       <footer class="bg-white dark:bg-gray-900">
         <div class="container mx-auto w-full max-w-screen-xl">
           <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
@@ -786,7 +787,7 @@ const App: Component = (props: RouterProps) => {
           </div>
         </div>
       </footer>
-    </>
+    </MetaProvider>
   );
 };
 

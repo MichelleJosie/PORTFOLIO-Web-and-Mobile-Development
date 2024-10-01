@@ -2,7 +2,7 @@
 import { render } from "solid-js/web";
 import { Route, Router } from "@solidjs/router";
 import "./index.css";
-import App from "./App";
+import Layout from "./App";
 import { lazy } from "solid-js";
 
 const root = document.getElementById("root");
@@ -17,7 +17,7 @@ import Bestsellers from "./pages/bestsellers";
 
 render(
   () => (
-    <Router root={App}>
+    <Router root={Layout}>
       <Route path="/" component={Homepage} />
       <Route path="/bestsellers/:category" component={Bestsellers} />
     </Router>

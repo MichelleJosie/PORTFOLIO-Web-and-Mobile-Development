@@ -1,6 +1,7 @@
 import { RouteProps, useParams } from "@solidjs/router";
 import { CategoryType, dogProductList, ProductCardView } from "./homepage";
 import { For } from "solid-js";
+import { Title } from "@solidjs/meta";
 
 type BestsellerRouteProps<S = {}> = S & {
   category: CategoryType;
@@ -10,6 +11,7 @@ const Bestsellers = () => {
   const props = useParams();
   return (
     <div>
+      <Title>{`Zooplus-Bestseller-${props.category}`}</Title>
       <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <div class="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8">

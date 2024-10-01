@@ -1,11 +1,20 @@
+import { Title } from "@solidjs/meta";
 import {
   Component,
   createEffect,
   createSignal,
   For,
   JSX,
+  Match,
   Show,
+  Switch,
 } from "solid-js";
+import DogIcon from "../assets/dog_02.svg";
+import CatIcon from "../assets/cat_01.svg";
+import BirdIcon from "../assets/dove_pigeon_02.svg";
+import FishIcon from "../assets/fish_butterflyfish.svg";
+import SmallAnimalIcon from "../assets/hare_01.svg";
+import HorseIcon from "../assets/horse_01.svg";
 
 type ProductCard = {
   productId: string;
@@ -296,6 +305,7 @@ const Homepage = () => {
 
   return (
     <>
+      <Title>Zooplus-Homepage</Title>
       <div class="container mx-auto px-8">
         <div
           id="default-carousel"
@@ -454,9 +464,31 @@ const Homepage = () => {
             <button
               onClick={() => changeList(item)}
               type="button"
-              class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
+              class="text-white bg-primary hover:bg-secondary font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
-              {item}
+              <div class="flex flex-row items-center align-middle gap-4">
+                <Switch fallback={<div>Not Found</div>}>
+                  <Match when={item == "Dog"}>
+                    <DogIcon />
+                  </Match>
+                  <Match when={item == "Cat"}>
+                    <CatIcon />
+                  </Match>
+                  <Match when={item == "Horse"}>
+                    <HorseIcon />
+                  </Match>
+                  <Match when={item == "Small Animal"}>
+                    <SmallAnimalIcon />
+                  </Match>
+                  <Match when={item == "Bird"}>
+                    <BirdIcon />
+                  </Match>
+                  <Match when={item == "Fish"}>
+                    <FishIcon />
+                  </Match>
+                </Switch>
+                <div>{item}</div>
+              </div>
             </button>
           )}
         </For>
@@ -747,7 +779,7 @@ const Slider: SliderComponent = (props: SliderProps) => {
                         }}
                       >
                         <img
-                          class="object-cover h-full w-full rounded-lg"
+                          class="object-cover h-full w-full rounded-lg pointer-events-none"
                           src={item.logo}
                           alt={item.alt}
                         />
