@@ -722,15 +722,12 @@ const App: Component = (props: RouterProps) => {
           </div>
         </div>
         <div class="w-screen bg-gray-100">
-          <div class="container mx-auto w-full max-w-screen-xl px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-            <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
+          <div class="container mx-auto w-full max-w-screen-xl px-4 py-6 bg-gray-100 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-800 sm:text-center">
               © zooplus SE 2024. All Rights Reserved.
             </span>
             <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
+              <a href="#" class="text-gray-800 hover:text-gray-900">
                 <svg
                   class="w-3 h-4"
                   aria-hidden="true"
@@ -746,10 +743,7 @@ const App: Component = (props: RouterProps) => {
                 </svg>
                 <span class="sr-only">Facebook page</span>
               </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
+              <a href="#" class="text-gray-800 hover:text-gray-900">
                 <svg
                   class="w-5 h-5"
                   viewBox="0 0 24 24"
@@ -765,10 +759,7 @@ const App: Component = (props: RouterProps) => {
                 </svg>
                 <span class="sr-only">Instagram</span>
               </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-gray-900 dark:hover:text-white"
-              >
+              <a href="#" class="text-gray-800 hover:text-gray-900">
                 <svg
                   class="w-5 h-5"
                   viewBox="0 0 24 24"
