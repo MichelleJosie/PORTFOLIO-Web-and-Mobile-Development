@@ -1,11 +1,11 @@
 {
   "name": "prototype-zooplus",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/PORTFOLIO-Web-and-Mobile-Development/",
     "serve": "vite preview"
   },
   "license": "MIT",

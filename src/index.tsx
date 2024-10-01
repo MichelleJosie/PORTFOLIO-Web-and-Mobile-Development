@@ -17,7 +17,7 @@ import Bestsellers from "./pages/bestsellers";
 
 render(
   () => (
-    <Router root={Layout}>
+    <Router base={import.meta.env.BASE_URL} root={Layout}>
       <Route path="/" component={Homepage} />
       <Route path="/bestsellers/:category" component={Bestsellers} />
     </Router>

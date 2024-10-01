@@ -18,8 +18,14 @@ jobs:
         run: |
           npm ci
           npm run build
+        env:
+          BASE_PATH: /PORTFOLIO-Web-and-Mobile-Development/
+
+      - name: create .nojekyll
+        run: touch ./dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
+          branch: gh-pages
+          folder: ./dist
