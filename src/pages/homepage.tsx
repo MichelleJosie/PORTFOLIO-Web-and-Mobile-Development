@@ -1,4 +1,4 @@
-import { Title } from "@solidjs/meta";
+import { Meta, Title } from "@solidjs/meta";
 import {
   Component,
   createEffect,
@@ -15,6 +15,7 @@ import BirdIcon from "../assets/dove_pigeon_02.svg";
 import FishIcon from "../assets/fish_butterflyfish.svg";
 import SmallAnimalIcon from "../assets/hare_01.svg";
 import HorseIcon from "../assets/horse_01.svg";
+import { A } from "@solidjs/router";
 
 type ProductCard = {
   productId: string;
@@ -306,6 +307,14 @@ const Homepage = () => {
   return (
     <>
       <Title>Zooplus-Homepage</Title>
+      <Meta
+        name="description"
+        content="Premium Pet Supplies | Best Products for Dogs, Cats, and All Pets"
+      ></Meta>
+      <Meta
+        name="keywords"
+        content="premium pet supplies, best pet products, dog and cat accessories, pet grooming essentials, top pet toys"
+      ></Meta>
       <div class="container mx-auto px-8">
         <div
           id="default-carousel"
@@ -594,7 +603,7 @@ const Homepage = () => {
         <div class="grid grid-cols-1 lg:grid-cols-2 grid-rows-4 lg:grid-rows-2 gap-4 md:px-6">
           <For each={magazineList}>
             {(item) => (
-              <a
+              <A
                 href="#"
                 class="border border-card-border shadow hover:drop-shadow-lg transition-all h-full w-full flex flex-col items-center bg-white rounded-lg shadow md:flex-row hover:bg-gray-100"
               >
@@ -620,17 +629,17 @@ const Homepage = () => {
                     <br />
                     {item.author}
                   </p>
-                  <h5
+                  <h3
                     class="mb-2 text-2xl font-bold tracking-tight text-gray-900"
                     lang="en"
                   >
                     {item.title}
-                  </h5>
+                  </h3>
                   <p class="mb-2 font-normal text-gray-700 hyphens-auto text-justify line-clamp-4">
                     {item.description}
                   </p>
                 </div>
-              </a>
+              </A>
             )}
           </For>
         </div>
@@ -768,7 +777,7 @@ const Slider: SliderComponent = (props: SliderProps) => {
                 <For each={list()}>
                   {(item) => (
                     <>
-                      <a
+                      <A
                         href="#"
                         class="p-1 md:p-2 snap-start rounded-lg"
                         classList={{
@@ -783,7 +792,7 @@ const Slider: SliderComponent = (props: SliderProps) => {
                           src={item.logo}
                           alt={item.alt}
                         />
-                      </a>
+                      </A>
                     </>
                   )}
                 </For>
@@ -849,13 +858,13 @@ const ProductOverview: ProductOverviewComponent = (
             Looking for more top products? Click here and find your new
             favorites!
           </h3>
-          <a
+          <A
             href={props.link}
             type="button"
             class="text-black bg-accent hover:bg-light font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
             Discover more!
-          </a>
+          </A>
         </div>
       </div>
     </>
@@ -873,7 +882,7 @@ export const ProductCardView: ProductCardViewComponent = (props) => {
   const item = props.item;
   return (
     <>
-      <a
+      <A
         href="#"
         class="flex flex-col hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all"
       >
@@ -884,9 +893,9 @@ export const ProductCardView: ProductCardViewComponent = (props) => {
         />
         <div class="p-5 grow flex flex-col">
           <div class="grow">
-            <h5 class="mb-3 font-semibold tracking-tight text-gray-900 line-clamp-3">
+            <h3 class="mb-3 font-semibold tracking-tight text-gray-900 line-clamp-3">
               {item.productName}
-            </h5>
+            </h3>
           </div>
           <p class="font-bold text-gray-700">{`£${item.price}`}</p>
           <Show when={item.pricePerKilo}>
@@ -905,7 +914,7 @@ export const ProductCardView: ProductCardViewComponent = (props) => {
             </p>
           </Show>
         </div>
-      </a>
+      </A>
     </>
   );
 };

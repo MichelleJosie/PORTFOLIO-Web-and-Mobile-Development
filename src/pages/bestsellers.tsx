@@ -1,7 +1,7 @@
-import { RouteProps, useParams } from "@solidjs/router";
+import { A, RouteProps, useParams } from "@solidjs/router";
 import { CategoryType, dogProductList, ProductCardView } from "./homepage";
 import { For } from "solid-js";
-import { Title } from "@solidjs/meta";
+import { Meta, Title } from "@solidjs/meta";
 
 type BestsellerRouteProps<S = {}> = S & {
   category: CategoryType;
@@ -12,6 +12,14 @@ const Bestsellers = () => {
   return (
     <div>
       <Title>{`Zooplus-Bestseller-${props.category}`}</Title>
+      <Meta
+        name="description"
+        content={`Bestselling ${props.category} Products | Top-Rated Pet Supplies for Your ${props.category}`}
+      ></Meta>
+      <Meta
+        name="keywords"
+        content={`best ${props.category} products, bestselling ${props.category} food, top ${props.category} accessories`}
+      ></Meta>
       <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <div class="mb-4 items-end justify-between space-y-4 sm:flex sm:space-y-0 md:mb-8">
@@ -19,7 +27,7 @@ const Bestsellers = () => {
               <nav class="flex" aria-label="Breadcrumb">
                 <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                   <li class="inline-flex items-center">
-                    <a
+                    <A
                       href="/"
                       class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white"
                     >
@@ -33,7 +41,7 @@ const Bestsellers = () => {
                         <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                       </svg>
                       Home
-                    </a>
+                    </A>
                   </li>
                   <li>
                     <div class="flex items-center">
@@ -54,12 +62,12 @@ const Bestsellers = () => {
                           d="m9 5 7 7-7 7"
                         />
                       </svg>
-                      <a
+                      <A
                         href="#"
                         class="ms-1 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white md:ms-2"
                       >
                         Bestsellers
-                      </a>
+                      </A>
                     </div>
                   </li>
                   <li aria-current="page">
@@ -186,36 +194,36 @@ const Bestsellers = () => {
                   aria-labelledby="sortDropdownButton"
                 >
                   <li>
-                    <a
+                    <A
                       href="#"
                       class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900"
                     >
                       The most popular
-                    </a>
+                    </A>
                   </li>
                   <li>
-                    <a
+                    <A
                       href="#"
                       class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900"
                     >
                       Newest
-                    </a>
+                    </A>
                   </li>
                   <li>
-                    <a
+                    <A
                       href="#"
                       class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900"
                     >
                       Increasing price
-                    </a>
+                    </A>
                   </li>
                   <li>
-                    <a
+                    <A
                       href="#"
                       class="group inline-flex w-full items-center rounded-md px-3 py-2 text-sm text-gray-500 hover:bg-gray-100 hover:text-gray-900"
                     >
                       Decreasing price
-                    </a>
+                    </A>
                   </li>
                 </ul>
               </div>

@@ -1,7 +1,7 @@
 import { createSignal, For, Show, type Component } from "solid-js";
 
 import "flowbite";
-import { RouterProps } from "@solidjs/router";
+import { A, RouterProps } from "@solidjs/router";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { Dropdown } from "flowbite";
 import { MetaProvider } from "@solidjs/meta";
@@ -211,7 +211,7 @@ const App: Component = (props: RouterProps) => {
         <div class="container 2xl:max-w-screen-2xl flex flex-wrap flex-row items-center md:justify-start mx-auto p-4 justify-between">
           <div class="flex flex-col md:flex-row flex-start w-full items-center">
             <div class="flex flex-row flex-start w-full md:w-auto items-center">
-              <a
+              <A
                 href="#"
                 class="flex items-center space-x-3 rtl:space-x-reverse"
               >
@@ -220,7 +220,7 @@ const App: Component = (props: RouterProps) => {
                   class="h-12"
                   alt="Zooplus Logo"
                 />
-              </a>
+              </A>
               <div class="block grow md:hidden"></div>
               <div class="flex">
                 <button
@@ -257,14 +257,14 @@ const App: Component = (props: RouterProps) => {
                 <For each={NavItemList}>
                   {(item, index) => (
                     <>
-                      <a
+                      <div
                         tabindex="0"
                         data-dropdown-toggle={`NavDropDown-${index()}`}
                         data-dropdown-trigger="click"
                         class="cursor-pointer space-x-1 lg:space-x-3 mx-1 lg:mx-3 rtl:space-x-reverse text-white text-md lg:text-lg"
                       >
                         {item.title}
-                      </a>
+                      </div>
                       <Show when={item.list}>
                         <div
                           id={`NavDropDown-${index()}`}
@@ -315,23 +315,23 @@ const App: Component = (props: RouterProps) => {
                                         <For each={item.list}>
                                           {(item) => (
                                             <li>
-                                              <a
+                                              <A
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100"
                                               >
                                                 {item.title}
-                                              </a>
+                                              </A>
                                             </li>
                                           )}
                                         </For>
                                       </ul>
                                       <div class="py-2 bg-red-200 hover:bg-red-300">
-                                        <a
+                                        <A
                                           href="#"
                                           class="block px-4 py-2 text-black font-semibold text-center"
                                         >
                                           % Sale %
-                                        </a>
+                                        </A>
                                       </div>
                                     </div>
                                   </Show>
@@ -444,7 +444,7 @@ const App: Component = (props: RouterProps) => {
                     aria-labelledby="dropdownMenuIconButton"
                   >
                     <li onClick={() => changeLanguage("DE")}>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100"
                         role="menuitem"
@@ -453,10 +453,10 @@ const App: Component = (props: RouterProps) => {
                           <span class="fi fi-de mr-2"></span>
                           Deutsch
                         </div>
-                      </a>
+                      </A>
                     </li>
                     <li onClick={() => changeLanguage("GB")}>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100"
                         role="menuitem"
@@ -465,10 +465,10 @@ const App: Component = (props: RouterProps) => {
                           <span class="fi fi-gb mr-2"></span>
                           Great Britain
                         </div>
-                      </a>
+                      </A>
                     </li>
                     <li onClick={() => changeLanguage("IT")}>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 text-sm text-black hover:bg-gray-100"
                         role="menuitem"
@@ -477,7 +477,7 @@ const App: Component = (props: RouterProps) => {
                           <span class="fi fi-it mr-2"></span>
                           Italia
                         </div>
-                      </a>
+                      </A>
                     </li>
                   </ul>
                 </div>
@@ -490,44 +490,44 @@ const App: Component = (props: RouterProps) => {
                     aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton"
                   >
                     <li>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         My zooplus
-                      </a>
+                      </A>
                     </li>
                     <li>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         My orders
-                      </a>
+                      </A>
                     </li>
                     <li>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         Re-Order
-                      </a>
+                      </A>
                     </li>
                     <li>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         My Wishlist
-                      </a>
+                      </A>
                     </li>
                     <li>
-                      <a
+                      <A
                         href="#"
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600"
                       >
                         My Rewards
-                      </a>
+                      </A>
                     </li>
                   </ul>
                 </div>
@@ -601,24 +601,24 @@ const App: Component = (props: RouterProps) => {
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                  <a href="#" class=" hover:underline">
+                  <A href="#" class=" hover:underline">
                     my zooplus
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Help
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Contact
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Shipping & Delivery
-                  </a>
+                  </A>
                 </li>
               </ul>
             </div>
@@ -628,24 +628,24 @@ const App: Component = (props: RouterProps) => {
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Loyalty Programme
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Charity Support
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Charity Discount
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Breeder Programme
-                  </a>
+                  </A>
                 </li>
               </ul>
             </div>
@@ -655,19 +655,19 @@ const App: Component = (props: RouterProps) => {
               </h2>
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Special Offers
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Clearance Sale
-                  </a>
+                  </A>
                 </li>
                 <li class="mb-4">
-                  <a href="#" class="hover:underline">
+                  <A href="#" class="hover:underline">
                     Seasonal Specials
-                  </a>
+                  </A>
                 </li>
               </ul>
             </div>
@@ -727,7 +727,7 @@ const App: Component = (props: RouterProps) => {
               © zooplus SE 2024. All Rights Reserved.
             </span>
             <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-              <a href="#" class="text-gray-800 hover:text-gray-900">
+              <A href="#" class="text-gray-800 hover:text-gray-900">
                 <svg
                   class="w-3 h-4"
                   aria-hidden="true"
@@ -742,8 +742,8 @@ const App: Component = (props: RouterProps) => {
                   />
                 </svg>
                 <span class="sr-only">Facebook page</span>
-              </a>
-              <a href="#" class="text-gray-800 hover:text-gray-900">
+              </A>
+              <A href="#" class="text-gray-800 hover:text-gray-900">
                 <svg
                   class="w-5 h-5"
                   viewBox="0 0 24 24"
@@ -758,8 +758,8 @@ const App: Component = (props: RouterProps) => {
                   <path d="M16.5 7.5l0 .01" />
                 </svg>
                 <span class="sr-only">Instagram</span>
-              </a>
-              <a href="#" class="text-gray-800 hover:text-gray-900">
+              </A>
+              <A href="#" class="text-gray-800 hover:text-gray-900">
                 <svg
                   class="w-5 h-5"
                   viewBox="0 0 24 24"
@@ -773,7 +773,7 @@ const App: Component = (props: RouterProps) => {
                   <path d="M10 9l5 3l-5 3z" />
                 </svg>
                 <span class="sr-only">YouTube</span>
-              </a>
+              </A>
             </div>
           </div>
         </div>

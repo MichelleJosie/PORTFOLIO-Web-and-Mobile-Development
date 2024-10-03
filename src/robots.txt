@@ -1,0 +1,9 @@
+# Allow all bots
+User-agent: *
+Allow: /
+
+# Block specific folders (optional, if you have folders to hide)
+Disallow: /assets/
+
+# Allow search engines to index the main sitemap
+Sitemap: https://michellejosie.github.io/PORTFOLIO-Web-and-Mobile-Development/sitemap.xml
