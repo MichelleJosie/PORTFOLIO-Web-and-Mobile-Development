@@ -383,7 +383,7 @@ const App: Component = (props: RouterProps) => {
                     <img
                       aria-hidden="true"
                       class="w-8 h-8 me-2 rounded-full"
-                      src="https://images.ctfassets.net/qp85kbzn8noe/6tVMP2NSU9HzA2qiOMRrMH/4c0c1845d14871d070e1fe79fc85d32f/2024_08_AnniversaryCampaign_Accessories_C_1000x1000_UK.jpg?fm=jpg&fl=progressive&w=280&q=85"
+                      src="https://images.ctfassets.net/qp85kbzn8noe/6tVMP2NSU9HzA2qiOMRrMH/4c0c1845d14871d070e1fe79fc85d32f/2024_08_AnniversaryCampaign_Accessories_C_1000x1000_UK.jpg?fm=webp&w=32&q=85"
                     />
                     Profile
                     <svg
