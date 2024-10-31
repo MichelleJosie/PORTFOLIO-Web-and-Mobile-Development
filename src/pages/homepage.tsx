@@ -335,48 +335,87 @@ const Homepage = () => {
               data-carousel-item
               id="Deal-1"
             >
-              <img
-                fetchpriority="high"
-                src="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="30 percent off on Cat and Dog products"
-              />
+              <picture>
+                <source
+                  media="(max-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=500&q=85"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                />
+                <img
+                  src="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="30 percent off on Cat and Dog products"
+                />
+              </picture>
             </div>
             <div
               class="hidden duration-700 ease-in-out"
               data-carousel-item
               id="Deal-2"
             >
-              <img
-                fetchpriority="low"
-                src="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=1005&q=85"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="15 percent off on products from selected brands"
-              />
+              <picture>
+                <source
+                  media="(max-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=500&q=85"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                />
+                <img
+                  fetchpriority="low"
+                  src="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="15 percent off on products from selected brands"
+                />
+              </picture>
             </div>
             <div
               class="hidden duration-700 ease-in-out"
               data-carousel-item
               id="Deal-3"
             >
-              <img
-                fetchpriority="low"
-                src="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="15 percent off your first subscription order"
-              />
+              <picture>
+                <source
+                  media="(max-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=500&q=85"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                />
+                <img
+                  fetchpriority="low"
+                  src="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="15 percent off your first subscription order"
+                />
+              </picture>
             </div>
             <div
               class="hidden duration-700 ease-in-out"
               data-carousel-item
               id="Deal-4"
             >
-              <img
-                fetchpriority="low"
-                src="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=1005&q=85"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="20 percent off on Hills best Dog and Cat Food"
-              />
+              <picture>
+                <source
+                  media="(max-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=500&q=85"
+                />
+                <source
+                  media="(min-width: 640px)"
+                  srcset="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                />
+                <img
+                  fetchpriority="low"
+                  src="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=1005&q=85"
+                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  alt="20 percent off on Hills best Dog and Cat Food"
+                />
+              </picture>
             </div>
             <div
               class="hidden duration-700 ease-in-out"
