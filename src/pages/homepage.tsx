@@ -189,7 +189,7 @@ export const horseProductList: ProductCard[] = [
 const dogSaleList: SliderItemType[] = [
   {
     logo: "https://images.ctfassets.net/qp85kbzn8noe/1eSIcSvL1O9nWsDvGHcIrV/d4d31133757a4229441f148c800f31ab/2024_08_AnniversaryCampaign_LCB_Offer_Week1_2880x480_DE.jpg?fm=webp&w=1005&q=85",
-    alt: "Up to 30% birthday deal for top brands such as Jsera and RINTI.",
+    alt: "Up to 30 percent birthday deal for top brands such as Jsera and RINTI.",
   },
   {
     logo: "https://images.ctfassets.net/qp85kbzn8noe/6aqfzjVYXqIVyyLBHDITGH/908170356e666dbe00a010a2b606d072/2024_06_Briantos_Snack_ChewBones_1000x160_DE__2_.jpg?fm=webp&w=1005&q=85",
@@ -204,31 +204,31 @@ const dogSaleList: SliderItemType[] = [
 const dogBrandList: SliderItemType[] = [
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/3CJr9HOhx68CYQMWEkyoCm/88fcf851e0260bdb93bbf394dbe45a7f/logo_RoyalCanin_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Royal Canin Logo",
+    alt: "Royal Canin",
   },
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/3hBjxpBe4osM42wIg4UOUs/4d06a9692348b2b9cf1710991f191478/logo_Pedigree_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Pedigree Logo",
+    alt: "Pedigree",
   },
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1ApsdLMSdKSoMUgCSEUG46/72b92fa1a78dadee0b8d519b25e3b67f/logo_Hills_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Hills Logo",
+    alt: "Hills",
   },
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/1j1n1hoXf444kgO4EkOKIo/940db5c84a1aeede46f339389938b718/logo_Rocco_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Rocco Logo",
+    alt: "Rocco",
   },
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/NHpHEAtJcago0EmYM2soG/699e6669937aa078faec42329d686acc/logo_Felix_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Felix Logo",
+    alt: "Felix",
   },
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/4nP2douo2Q0OE4co8qS2ws/d3f83efd1a4536f0a13d7d06f06fb05e/logo_Animonda_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "animonda Logo",
+    alt: "animonda",
   },
   {
     logo: "https://images.ctfassets.net/w4bhfqu0yxyq/53wmaxweu4sMsqs0eMu2cW/3686e98f0ed22f522f9621e6d0d64f30/logo_Cosma_1000x700.jpg?fm=webp&w=130&q=85",
-    alt: "Cosma Logo",
+    alt: "Cosma",
   },
 ];
 type ListItems = {
@@ -330,7 +330,7 @@ const Homepage = () => {
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="30% off on Cat and Dog products"
+                alt="30 percent off on Cat and Dog products"
               />
             </div>
             <div
@@ -341,7 +341,7 @@ const Homepage = () => {
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="15% off on products from selected brands"
+                alt="15 percent off on products from selected brands"
               />
             </div>
             <div
@@ -352,7 +352,7 @@ const Homepage = () => {
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="15% off your first subscription order"
+                alt="15 percent off your first subscription order"
               />
             </div>
             <div
@@ -363,7 +363,7 @@ const Homepage = () => {
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="20% off on Hills best Dog and Cat Food"
+                alt="20 percent off on Hills best Dog and Cat Food"
               />
             </div>
             <div
@@ -374,7 +374,7 @@ const Homepage = () => {
               <img
                 src="https://images.ctfassets.net/qp85kbzn8noe/1ZzEy6m1hLlKDIdDPvlYB4/69ed32174acc959eebfcf35e706431cc/2024_08_AnniversaryCampaign_OwnBrands_Accessories_Tiaki_ModernLiving_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                alt="25% for TIAKI products"
+                alt="25 percent for TIAKI products"
               />
             </div>
           </div>
@@ -658,7 +658,7 @@ export default Homepage;
 const magazineList: ArticleType[] = [
   {
     title: "Allergies affecting dogs",
-    alt: "an image of a dog that scatches itself",
+    alt: "a dog that scratches itself",
     image:
       "https://www.zooplus.co.uk/magazine/wp-content/uploads/2019/12/allergies-affecting-dogs-1024x683.jpg",
     author: "zooplus",
@@ -668,7 +668,7 @@ const magazineList: ArticleType[] = [
   },
   {
     title: "Pixiebob",
-    alt: "an Image of a walking cat with a short tail",
+    alt: "a walking cat with a short tail",
     image:
       "https://www.zooplus.co.uk/magazine/wp-content/uploads/2024/08/Pixiebob.jpg",
     author: "Natalie Decker",
@@ -678,7 +678,7 @@ const magazineList: ArticleType[] = [
   },
   {
     title: "Hermelin Rabbits",
-    alt: "an Image of a rabbit outside",
+    alt: "a rabbit outside",
     image:
       "https://www.zooplus.co.uk/magazine/wp-content/uploads/2024/08/Hermelin-Rabbits.jpg",
     author: "Franziska G., Veterinarian",
@@ -688,7 +688,7 @@ const magazineList: ArticleType[] = [
   },
   {
     title: "Diamond Dove",
-    alt: "an Image of a bird sitting on a branch",
+    alt: "a bird sitting on a branch",
     image:
       "https://www.zooplus.co.uk/magazine/wp-content/uploads/2024/08/AdobeStock_300034398-768x512-1.jpeg",
     author: "Natalie Decker",
@@ -886,11 +886,7 @@ export const ProductCardView: ProductCardViewComponent = (props) => {
         href="#"
         class="flex flex-col hover:bg-gray-100 max-w-sm bg-white border border-card-border rounded-lg shadow hover:drop-shadow-lg transition-all"
       >
-        <img
-          class="rounded-t-lg"
-          src={item.productImage}
-          alt={item.productImageAlt}
-        />
+        <img class="rounded-t-lg" src={item.productImage} alt="" />
         <div class="p-5 grow flex flex-col">
           <div class="grow">
             <h3 class="mb-3 font-semibold tracking-tight text-gray-900 line-clamp-3">
