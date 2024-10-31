@@ -348,7 +348,7 @@ const Homepage = () => {
               id="Deal-2"
             >
               <img
-                loading="lazy"
+                fetchpriority="low"
                 src="https://images.ctfassets.net/qp85kbzn8noe/22egLM2kBbsHq9jOvXrWiL/bd5bf7a4453f5ccefa217745b3c940a9/2024_09_AnniversaryCampaign_AppExclusive_OBF_Week3_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="15 percent off on products from selected brands"
@@ -360,7 +360,7 @@ const Homepage = () => {
               id="Deal-3"
             >
               <img
-                loading="lazy"
+                fetchpriority="low"
                 src="https://images.ctfassets.net/qp85kbzn8noe/6pwvQSKVaKM9dxOVVBndEj/6bb8ccf906a804c402151f4c3f1e7d48/2024_09_AnniversaryCamapign_Autoship_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="15 percent off your first subscription order"
@@ -372,7 +372,7 @@ const Homepage = () => {
               id="Deal-4"
             >
               <img
-                loading="lazy"
+                fetchpriority="low"
                 src="https://images.ctfassets.net/qp85kbzn8noe/3A1jSe8wdjaYjjJufSkHr8/ad02d8fb9ea174f4d6ffc69dd3f898ec/2024_09_Hills_SciencePlan_Dry_D_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="20 percent off on Hills best Dog and Cat Food"
@@ -384,7 +384,7 @@ const Homepage = () => {
               id="Deal-5"
             >
               <img
-                loading="lazy"
+                fetchpriority="low"
                 src="https://images.ctfassets.net/qp85kbzn8noe/1ZzEy6m1hLlKDIdDPvlYB4/69ed32174acc959eebfcf35e706431cc/2024_08_AnniversaryCampaign_OwnBrands_Accessories_Tiaki_ModernLiving_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="25 percent for TIAKI products"
