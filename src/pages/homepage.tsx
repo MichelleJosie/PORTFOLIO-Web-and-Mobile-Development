@@ -661,6 +661,7 @@ const Homepage = () => {
               >
                 <img
                   loading="lazy"
+                  fetchpriority="low"
                   class="object-cover w-full md:w-44 lg:w-48 xl:w-72 rounded-t-lg h-full md:rounded-none md:rounded-s-lg"
                   src={item.image}
                   alt={item.alt}
@@ -842,6 +843,7 @@ const Slider: SliderComponent = (props: SliderProps) => {
                       >
                         <img
                           loading="lazy"
+                          fetchpriority="low"
                           class="object-cover h-full w-full rounded-lg pointer-events-none"
                           src={item.logo}
                           alt={item.alt}
@@ -970,6 +972,7 @@ export const ProductCardView: ProductCardViewComponent = (props) => {
         </Show>
         <img
           loading="lazy"
+          fetchpriority="low"
           class="rounded-t-lg"
           src={item.productImage}
           alt=""
