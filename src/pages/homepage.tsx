@@ -336,7 +336,7 @@ const Homepage = () => {
               id="Deal-1"
             >
               <img
-                loading="eager"
+                fetchpriority="high"
                 src="https://images.ctfassets.net/qp85kbzn8noe/4EXIJd8wWtaF5M3eIugBj4/3d6eb67a9178150804d3552ed8366c76/2024_09_AnniversaryCampaign_General_Week2_2400x800_UK.jpg?fm=webp&w=1005&q=85"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                 alt="30 percent off on Cat and Dog products"
