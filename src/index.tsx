@@ -14,12 +14,17 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 }
 import Homepage from "./pages/homepage";
 import Bestsellers from "./pages/bestsellers";
+import ProductOverview from "./pages/productoverview";
 
 render(
   () => (
     <Router base={import.meta.env.BASE_URL} root={Layout}>
       <Route path="/" component={Homepage} />
       <Route path="/bestsellers/:category" component={Bestsellers} />
+      <Route
+        path="/product/:productName/:productId"
+        component={ProductOverview}
+      />
     </Router>
   ),
   root!
