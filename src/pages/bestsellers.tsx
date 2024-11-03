@@ -1,7 +1,8 @@
-import { A, RouteProps, useParams } from "@solidjs/router";
-import { CategoryType, dogProductList, ProductCardView } from "./homepage";
+import { A, useParams } from "@solidjs/router";
 import { For } from "solid-js";
 import { Meta, Title } from "@solidjs/meta";
+import { ProductCardView } from "../components/productcardview";
+import { CategoryType, dogProductList } from "../assets/data";
 
 type BestsellerRouteProps<S = {}> = S & {
   category: CategoryType;
@@ -247,4 +248,5 @@ const Bestsellers = () => {
     </div>
   );
 };
+
 export default Bestsellers;

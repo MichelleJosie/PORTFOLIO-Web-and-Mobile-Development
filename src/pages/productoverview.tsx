@@ -1,8 +1,11 @@
 import { useParams } from "@solidjs/router";
 import { createEffect, createSignal } from "solid-js";
-import { ProductCard, ProductCardView, combinedProductList } from "./homepage";
+import { Title } from "@solidjs/meta";
+import { ProductCardView } from "../components/productcardview";
+import { combinedProductList } from "../assets/data";
+import { ProductCard } from "../components/productoverview";
 
-const ProductOverview = () => {
+export const ProductOverview = () => {
   const props = useParams();
 
   let result = combinedProductList.find(
@@ -36,6 +39,7 @@ const ProductOverview = () => {
 
   return (
     <div>
+      <Title>{`Zooplus - ${product().productName}`}</Title>
       <section class="py-8 bg-white md:py-16 antialiased">
         <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
           <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
@@ -938,4 +942,5 @@ const ProductOverview = () => {
     </div>
   );
 };
+
 export default ProductOverview;
