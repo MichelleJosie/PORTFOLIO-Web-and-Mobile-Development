@@ -1,6 +1,6 @@
 import { A } from "@solidjs/router";
 import { JSX, Component, Show, Switch, Match } from "solid-js";
-import { ProductCard } from "../pages/homepage";
+import { ProductCard } from "./productoverview";
 
 export type ProductCardViewProps<P = {}> = P & {
   children?: JSX.Element;
